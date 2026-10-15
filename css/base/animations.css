@@ -1,2 +1,3 @@
+@keyframes c-blink{0%,55%{opacity:1}56%,100%{opacity:.2}} /* lampeggio lento del cursore: ~0,8 Hz */
 /* Solo cicli infiniti (es. lampeggio cursore, Fase 2) e regola reduced-motion globale. Gli effetti one-shot stanno in js/ui/animations.js */
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}

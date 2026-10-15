@@ -1,0 +1,2 @@
+.c-fingerhint{display:inline-flex;min-height:2rem;align-items:center;padding:var(--space-1) var(--space-4);border:1px solid var(--border);border-radius:99px;background:var(--surface);font-size:var(--text-sm)}
+.c-fingerhint[data-empty]{visibility:hidden}

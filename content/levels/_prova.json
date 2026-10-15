@@ -1,0 +1,2 @@
+{ "id": "_prova", "titolo": "[ESERCIZIO DI PROVA]", "nota": "Segnaposto per collaudare tastiera e motore: non sono esercizi didattici.",
+  "esercizi": [ { "id": "prova-01", "testo": "asdf fdsa asdf" }, { "id": "prova-02", "testo": "Dieci dita, nessuna fretta." }, { "id": "prova-03", "testo": "è à ù ò ì" } ] }

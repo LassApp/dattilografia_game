@@ -1,0 +1,7 @@
+.c-kb{display:flex;flex-direction:column;gap:6px;width:min(100%,56rem);margin-inline:auto}
+.c-kb__row{display:flex;gap:6px}
+.c-kb[data-tint] .c-key[data-finger=p]{box-shadow:inset 0 0 0 3px var(--ft-p),var(--shadow-key)}
+.c-kb[data-tint] .c-key[data-finger=r]{box-shadow:inset 0 0 0 3px var(--ft-r),var(--shadow-key)}
+.c-kb[data-tint] .c-key[data-finger=m]{box-shadow:inset 0 0 0 3px var(--ft-m),var(--shadow-key)}
+.c-kb[data-tint] .c-key[data-finger=i]{box-shadow:inset 0 0 0 3px var(--ft-i),var(--shadow-key)}
+.c-kb[data-tint] .c-key[data-finger=t]{box-shadow:inset 0 0 0 3px var(--ft-t),var(--shadow-key)}

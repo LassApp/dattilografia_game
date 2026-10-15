@@ -1,0 +1,12 @@
+.c-textview{font:var(--text-copy)/1.7 var(--font-mono);letter-spacing:.04em;height:3lh;overflow:hidden;width:min(100%,56rem);margin-inline:auto}
+.c-textview[data-size=S]{font-size:calc(var(--text-copy) * .75)}.c-textview[data-size=L]{font-size:calc(var(--text-copy) * 1.25)}.c-textview[data-size=XL]{font-size:calc(var(--text-copy) * 1.5)}
+.c-textview__flow{position:relative;white-space:pre-wrap;transform:translateY(calc(var(--_line,0) * -1lh));transition:transform var(--dur-quick) var(--ease-out)}
+.c-word{white-space:nowrap}
+.c-char{display:inline-block;position:relative;vertical-align:top;min-width:1ch;min-height:1lh;color:var(--text)}
+.c-char[data-state=typed]{color:var(--char-typed)}
+.c-char[data-state=current],.c-char[data-state=error]{border-radius:4px}
+.c-char[data-state=current]{color:var(--char-current)}
+.c-char[data-state=error]{color:var(--char-error);background:var(--heat-1)}
+.c-char[data-state=current]::after,.c-char[data-state=error]::after{content:"";position:absolute;inset-inline:0;bottom:.12em;height:4px;border-radius:2px;background:var(--char-current);animation:c-blink 1.2s linear infinite}
+.c-char[data-state=error]::after{background:var(--error);height:6px;animation:none}
+.c-char[data-glyph]:is([data-state=current],[data-state=error])::before{content:attr(data-glyph);position:absolute;inset:0;display:grid;place-items:center;color:var(--text-faint)}

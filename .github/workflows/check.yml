@@ -13,5 +13,4 @@ jobs:
           node-version: 20
       - name: Colori fuori da tokens.css e confini di architettura
         run: npm run check
-      # Da attivare quando esisteranno i test (Fase 2):
-      # - run: node --test tests/
+      - run: npm test
