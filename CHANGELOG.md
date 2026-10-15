@@ -1,4 +1,6 @@
 # Changelog
+## 0.2.1 — Correzione
+- Livello di prova rinominato `_prova` → `prova`: GitHub Pages (Jekyll) non pubblica file e cartelle che iniziano con `_`. Aggiunto `.nojekyll`.
 ## 0.2.0 — Fase 2 (layout italiano, tastiera animata, motore di input)
 - `layout-it` (tasti, dita, mani, Shift opposto, AltGr, Caps per maiuscole accentate), motore `input`/`session` con blocco su errore, `text-normalize`.
 - Componenti: Key, VirtualKeyboard, TextView (Char e Cursor solo CSS), FingerHint; `animations.js`; `game-controller`; schermata di gioco v0 con esercizi `[ESERCIZIO DI PROVA]`.

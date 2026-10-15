@@ -10,7 +10,7 @@ import { createSession } from '../../engine/session.js';
 import { normalizeText } from '../../engine/text-normalize.js';
 import { createGameController } from '../../controllers/game-controller.js';
 export function GameScreen(params = []) {
-  const [levelId = '_prova', exId] = params; const settings = getSettings();
+  const [levelId = 'prova', exId] = params; const settings = getSettings();
   const session = createSession();
   const textView = TextView({ size: settings.textSize }); const keyboard = VirtualKeyboard({ guide: settings.guide, tint: settings.fingerTint }); const hint = FingerHint();
   const title = h('h1', { class: 's-game__title' }); const done = h('p', { class: 's-game__done', role: 'status' });
