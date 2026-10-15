@@ -5,8 +5,12 @@ import * as button from '../ui/components/button.js';
 import * as iconButton from '../ui/components/icon-button.js';
 import * as themeToggle from '../ui/components/theme-toggle.js';
 import * as topbar from '../ui/components/topbar.js';
+import * as key from '../ui/components/key.js';
+import * as keyboard from '../ui/components/virtual-keyboard.js';
+import * as textView from '../ui/components/text-view.js';
+import * as fingerHint from '../ui/components/finger-hint.js';
 // Aggiungere qui ogni nuovo componente (check-architecture verifica che esporti `meta`).
-const MODULES = [icon, button, iconButton, themeToggle, topbar];
+const MODULES = [icon, button, iconButton, themeToggle, topbar, key, keyboard, textView, fingerHint];
 const FORCE = { hov: 'hover', foc: 'focus', act: 'active' };
 applyTheme();
 const out = document.querySelector('#out');

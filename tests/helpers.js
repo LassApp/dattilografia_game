@@ -1,0 +1,1 @@
+export const key = (k, extra = {}) => ({ key: k, code: k.length === 1 ? 'Key' + k.toUpperCase() : k, ctrl: false, meta: false, alt: false, altGraph: false, repeat: false, composing: false, ...extra });
