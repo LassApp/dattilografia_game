@@ -1,0 +1,17 @@
+# Esegue i controlli del progetto a ogni push e pull request. Nessuna dipendenza da installare.
+name: check
+on:
+  push:
+  pull_request:
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Colori fuori da tokens.css e confini di architettura
+        run: npm run check
+      # Da attivare quando esisteranno i test (Fase 2):
+      # - run: node --test tests/

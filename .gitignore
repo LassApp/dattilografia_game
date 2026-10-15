@@ -1,0 +1,13 @@
+# Dipendenze e build (oggi non ce ne sono: restano per il futuro)
+node_modules/
+dist/
+# File di sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+# Editor
+.vscode/
+.idea/
+# Log e archivi di consegna
+*.log
+*.zip
