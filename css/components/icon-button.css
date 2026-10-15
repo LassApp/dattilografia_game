@@ -1,0 +1,7 @@
+.c-iconbtn{display:grid;place-items:center;width:44px;height:44px;border:1px solid transparent;border-radius:var(--radius-md);background:transparent;color:inherit;transition:transform var(--dur-quick) var(--ease-out)}
+.c-iconbtn[data-size=sm]{width:36px;height:36px}
+.c-iconbtn[data-variant=secondary]{background:var(--surface);border-color:var(--border);color:var(--text)}
+.c-iconbtn:is(:hover,[data-force~=hover]):not(:disabled){border-color:currentColor}
+.c-iconbtn:is(:active,[data-force~=active]):not(:disabled){transform:scale(.94)}
+.c-iconbtn:is(:focus-visible,[data-force~=focus]){outline:3px solid var(--focus-ring);outline-offset:2px}
+.c-iconbtn:disabled{cursor:not-allowed;border:1px dashed currentColor}

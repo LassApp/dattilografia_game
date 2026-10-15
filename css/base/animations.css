@@ -1,0 +1,2 @@
+/* Solo cicli infiniti (es. lampeggio cursore, Fase 2) e regola reduced-motion globale. Gli effetti one-shot stanno in js/ui/animations.js */
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}

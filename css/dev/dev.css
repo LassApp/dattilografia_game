@@ -1,0 +1,9 @@
+/* Solo per palette.html e componenti.html */
+.p-panel{background:var(--bg-page);color:var(--text);padding:var(--space-5);border:1px solid var(--border)}
+.p-cols{display:grid;grid-template-columns:1fr 1fr}
+.p-row{display:grid;grid-template-columns:2.5rem 14rem 1fr;gap:var(--space-3);align-items:center;font-size:var(--text-sm);padding:2px 0}
+.p-sw{width:2.5rem;height:1.5rem;border-radius:4px;border:1px solid var(--border);background:var(--_sw)}
+.p-row code,.p-ratio{font-family:var(--font-mono)}.p-pass{color:var(--success-text)}.p-fail{color:var(--error-text);font-weight:700}
+.p-probe{position:absolute;visibility:hidden;color:var(--_fg);background:var(--_bg)}
+.g-cell{display:flex;gap:var(--space-3);flex-wrap:wrap;align-items:center;padding:var(--space-3) 0}
+.g-cell small{width:6rem;color:var(--text-muted)}

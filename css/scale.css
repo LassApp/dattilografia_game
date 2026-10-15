@@ -1,0 +1,6 @@
+/* Token NON colore */
+:root{--font-ui:"Atkinson Hyperlegible",system-ui,sans-serif;--font-mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+--space-1:4px;--space-2:8px;--space-3:12px;--space-4:16px;--space-5:24px;--space-6:32px;--space-8:48px;
+--text-sm:.875rem;--text-md:1rem;--text-lg:1.25rem;--text-xl:2rem;--text-copy:2rem;
+--radius-sm:6px;--radius-md:10px;--radius-lg:16px;
+--dur-press:100ms;--dur-quick:160ms;--dur-error:300ms;--ease-out:cubic-bezier(.2,.7,.2,1);--z-overlay:100}

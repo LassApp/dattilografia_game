@@ -1,0 +1,14 @@
+/* Ordine dei layer = ordine di precedenza. Nessuna regola fuori layer. */
+@layer tokens, reset, base, layout, components, screens, utilities;
+@import url("tokens.css") layer(tokens);
+@import url("scale.css") layer(tokens);
+@import url("reset.css") layer(reset);
+@import url("base/fonts.css") layer(base);
+@import url("base/base.css") layer(base);
+@import url("base/animations.css") layer(base);
+@import url("layout/shell.css") layer(layout);
+@import url("layout/primitives.css") layer(layout);
+@import url("components/index.css") layer(components);
+@import url("screens/index.css") layer(screens);
+@import url("dev/dev.css") layer(screens);
+@import url("utilities.css") layer(utilities);
