@@ -3,3 +3,5 @@
 .s-game__banner{display:grid;place-items:center;width:100%;min-height:3.25rem}
 .s-game__done{min-height:1.5em;font-weight:700}
 .s-game[data-paused] :is(.c-textview,.c-kb){filter:blur(4px)}
+.s-game__board{display:flex;gap:var(--space-4);align-items:center;justify-content:center;width:100%}
+.s-game__board .c-kb{flex:1 1 0;min-width:0;width:auto;max-width:56rem;margin-inline:0}

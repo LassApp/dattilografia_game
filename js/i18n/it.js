@@ -9,6 +9,7 @@ export default {
   fingerArt: { p: 'il mignolo', r: 'l\'anulare', m: 'il medio', i: 'l\'indice', t: 'il pollice' },
   hand: { l: 'sinistro', r: 'destro' },
   row: { 0: 'dei numeri', 1: 'superiore', 2: 'base', 3: 'inferiore' },
+  legend: { title: 'Dita', note: 'Stessi colori per le due mani' },
   hud: { label: 'Statistiche', time: 'Tempo', wpm: 'WPM', accuracy: 'Precisione', errors: 'Errori' },
   banner: { caps: 'Attenzione: Caps Lock attivo' },
   hint: { base: 'Suggerimento: il tasto {char} si preme con {finger} {hand}, sulla riga {row}.', thumb: 'Suggerimento: il tasto {char} si preme con il pollice.', shift: 'Per la maiuscola usa Shift {side}.', home: 'Dopo ogni tasto riporta le dita su F e J.' },

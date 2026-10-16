@@ -8,7 +8,6 @@
 @import url("base/animations.css") layer(base);
 @import url("layout/shell.css") layer(layout);
 @import url("layout/primitives.css") layer(layout);
-@import url("components/index.css") layer(components);
-@import url("screens/index.css") layer(screens);
+@import url("index.css");
 @import url("dev/dev.css") layer(screens);
 @import url("utilities.css") layer(utilities);

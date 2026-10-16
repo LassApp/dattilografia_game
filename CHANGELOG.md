@@ -1,4 +1,7 @@
 # Changelog
+## 0.3.2 — Dita colorate e CSS
+- Dita colorate: tutto il tasto nel colore del dito (testo con contrasto AA, token `--key-finger-*`) e nuova legenda a sinistra della tastiera (FingerLegend) con il dito corrente evidenziato. Rimossi i token `--ft-*`.
+- Un solo `css/index.css` (elenco di componenti e schermate, con layer per riga) al posto di `components/index.css` e `screens/index.css`; `check-architecture` verifica che ogni CSS sia elencato.
 ## 0.3.1 — Correzione
 - Dita colorate: barra piena nel colore del dito con contorno del colore del testo del tasto (prima, tinta al 30%: poco visibile in scuro e invisibile in chiaro).
 ## 0.3.0 — Fase 3 (metriche, controlli, pausa)

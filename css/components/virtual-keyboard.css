@@ -1,10 +1,9 @@
 .c-kb{display:flex;flex-direction:column;gap:6px;width:min(100%,56rem);margin-inline:auto}
 .c-kb__row{display:flex;gap:6px}
-/* Dita colorate: barra piena nel colore del dito, con contorno del colore del testo del tasto.
-   Resta leggibile sia sul tasto marrone (tema chiaro) sia su quello crema (tema scuro). Il dito è sempre indicato anche a parole (FingerHint). */
-.c-kb[data-tint] .c-key[data-finger]::before{content:"";position:absolute;inset-inline:6px;top:5px;height:6px;border-radius:3px;background:var(--_finger);box-shadow:0 0 0 2px var(--key-text)}
-.c-kb[data-tint] .c-key[data-finger=p]{--_finger:var(--finger-pinky)}
-.c-kb[data-tint] .c-key[data-finger=r]{--_finger:var(--finger-ring)}
-.c-kb[data-tint] .c-key[data-finger=m]{--_finger:var(--finger-middle)}
-.c-kb[data-tint] .c-key[data-finger=i]{--_finger:var(--finger-index)}
-.c-kb[data-tint] .c-key[data-finger=t]{--_finger:var(--finger-thumb)}
+/* Dita colorate: tutto il tasto nel colore del dito (stessa tinta per le due mani). Contrasto del testo verificato in palette.html. */
+.c-kb[data-tint] .c-key[data-finger]{background:var(--_fill);color:var(--_ink,var(--key-finger-text))}
+.c-kb[data-tint] .c-key[data-finger=p]{--_fill:var(--key-finger-p)}
+.c-kb[data-tint] .c-key[data-finger=r]{--_fill:var(--key-finger-r)}
+.c-kb[data-tint] .c-key[data-finger=m]{--_fill:var(--key-finger-m)}
+.c-kb[data-tint] .c-key[data-finger=i]{--_fill:var(--key-finger-i)}
+.c-kb[data-tint] .c-key[data-finger=t]{--_fill:var(--key-finger-t);--_ink:var(--key-finger-t-text)}

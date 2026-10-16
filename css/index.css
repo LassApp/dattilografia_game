@@ -1,0 +1,18 @@
+/* Elenco unico dei CSS di componenti e schermate: il layer si assegna riga per riga. Ogni file va elencato qui (tools/check-architecture.mjs lo verifica). */
+@import url("components/icon.css") layer(components);
+@import url("components/button.css") layer(components);
+@import url("components/icon-button.css") layer(components);
+@import url("components/key.css") layer(components);
+@import url("components/virtual-keyboard.css") layer(components);
+@import url("components/text-view.css") layer(components);
+@import url("components/finger-hint.css") layer(components);
+@import url("components/finger-legend.css") layer(components);
+@import url("components/topbar.css") layer(components);
+@import url("components/stat-pill.css") layer(components);
+@import url("components/hud.css") layer(components);
+@import url("components/banner.css") layer(components);
+@import url("components/switch.css") layer(components);
+@import url("components/segmented-control.css") layer(components);
+@import url("components/modal.css") layer(components);
+@import url("components/settings-panel.css") layer(components);
+@import url("screens/game.css") layer(screens);

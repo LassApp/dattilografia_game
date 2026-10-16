@@ -3,13 +3,13 @@ import { charToKeys } from '../data/layout-it.js';
 import { hudValues } from '../util/format.js';
 import { IDLE_PAUSE_MS, HUD_REFRESH_MS } from '../config.js';
 /** ui: { setCaps(bool), setHint(hint|null), showPause(reason), hidePause(), onStatus(state), onCompleted(state, summary) } */
-export function createGameController({ session, hints, textView, keyboard, fingerHint, hud, ui }) {
+export function createGameController({ session, hints, textView, keyboard, fingerHint, fingerLegend, hud, ui }) {
   let caps = false, hudTimer = null, idleTimer = null;
   const refreshHud = () => hud.update(hudValues(session.getState()));
   const render = () => {
     const st = session.getState(); const nk = st.expected != null ? charToKeys(st.expected) : null;
     textView.update({ text: st.text, index: st.index, error: st.errorActive, errorTick: st.errors });
-    keyboard.update({ next: nk }); fingerHint.update({ next: nk }); refreshHud();
+    keyboard.update({ next: nk }); fingerHint.update({ next: nk }); fingerLegend.update({ active: nk ? nk.finger : null }); refreshHud();
   };
   const stopTimers = () => { clearInterval(hudTimer); clearTimeout(idleTimer); hudTimer = idleTimer = null; };
   const armIdle = () => { clearTimeout(idleTimer); if (session.getState().status === 'running') idleTimer = setTimeout(() => session.pause('idle'), IDLE_PAUSE_MS); };

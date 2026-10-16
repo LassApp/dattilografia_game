@@ -9,6 +9,7 @@ import * as key from '../ui/components/key.js';
 import * as keyboard from '../ui/components/virtual-keyboard.js';
 import * as textView from '../ui/components/text-view.js';
 import * as fingerHint from '../ui/components/finger-hint.js';
+import * as fingerLegend from '../ui/components/finger-legend.js';
 import * as statPill from '../ui/components/stat-pill.js';
 import * as hud from '../ui/components/hud.js';
 import * as banner from '../ui/components/banner.js';
@@ -19,7 +20,7 @@ import * as pauseOverlay from '../ui/components/pause-overlay.js';
 import * as confirmDialog from '../ui/components/confirm-dialog.js';
 import * as settingsPanel from '../ui/components/settings-panel.js';
 // Aggiungere qui ogni nuovo componente (check-architecture verifica che esporti `meta`).
-const MODULES = [icon, button, iconButton, themeToggle, topbar, key, keyboard, textView, fingerHint, statPill, hud, banner, switchC, segmented, modal, pauseOverlay, confirmDialog, settingsPanel];
+const MODULES = [icon, button, iconButton, themeToggle, topbar, key, keyboard, textView, fingerHint, fingerLegend, statPill, hud, banner, switchC, segmented, modal, pauseOverlay, confirmDialog, settingsPanel];
 const FORCE = { hov: 'hover', foc: 'focus', act: 'active' };
 applyTheme();
 const out = document.querySelector('#out');

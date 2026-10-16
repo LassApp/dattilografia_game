@@ -8,6 +8,7 @@ import { Banner } from '../components/banner.js';
 import { TextView } from '../components/text-view.js';
 import { VirtualKeyboard } from '../components/virtual-keyboard.js';
 import { FingerHint } from '../components/finger-hint.js';
+import { FingerLegend } from '../components/finger-legend.js';
 import { PauseOverlay } from '../components/pause-overlay.js';
 import { ConfirmDialog } from '../components/confirm-dialog.js';
 import { getSettings, onSettings } from '../../storage/settings-store.js';
@@ -29,7 +30,7 @@ export function GameScreen(params = [], ctx = {}) {
   const [levelId = 'prova', exId] = params; const settings = getSettings(); let exerciseId = exId ?? null;
   const session = createSession(); const hints = createHints();
   const textView = TextView({ size: settings.textSize }); const keyboard = VirtualKeyboard({ guide: settings.guide, tint: settings.fingerTint });
-  const fingerHint = FingerHint(); const hud = Hud(hudValues(session.getState())); const banner = Banner({ variant: 'warning' });
+  const fingerHint = FingerHint(); const fingerLegend = FingerLegend({ tint: settings.fingerTint }); const hud = Hud(hudValues(session.getState())); const banner = Banner({ variant: 'warning' });
   const title = h('span', { class: 's-game__toptitle' }); const done = h('p', { class: 's-game__done', role: 'status' });
   const flags = { caps: false, hint: null };
   const showBanner = () => (flags.caps ? banner.update({ visible: true, variant: 'warning', text: t('banner.caps') })
@@ -43,8 +44,8 @@ export function GameScreen(params = [], ctx = {}) {
   const restartBtn = Button({ label: t('game.restart'), icon: 'restart', variant: 'ghost', onClick: (e) => { e.currentTarget.blur(); askRestart(); } });
   const back = h('a', { href: '#/' }, Icon({ name: 'back', size: 'sm' }).el, t('nav.back'));
   ctx.topbar?.update({ center: h('div', { class: 'l-cluster' }, back, title), extra: [pauseBtn.el, restartBtn.el] });
-  const el = h('div', { class: 's-game l-container' }, hud.el, h('div', { class: 's-game__banner' }, banner.el), fingerHint.el, keyboard.el, textView.el, done);
-  const ctrl = createGameController({ session, hints, textView, keyboard, fingerHint, hud, ui: {
+  const el = h('div', { class: 's-game l-container' }, hud.el, h('div', { class: 's-game__banner' }, banner.el), fingerHint.el, h('div', { class: 's-game__board' }, fingerLegend.el, keyboard.el), textView.el, done);
+  const ctrl = createGameController({ session, hints, textView, keyboard, fingerHint, fingerLegend, hud, ui: {
     setCaps: (v) => { flags.caps = v; showBanner(); }, setHint: (x) => { flags.hint = x; showBanner(); },
     showPause: (reason) => pauseOverlay.open(reason === 'modal' ? 'manual' : reason), hidePause: () => pauseOverlay.close(),
     onStatus: (st) => { pauseBtn.update({ disabled: st.status !== 'running' }); el.toggleAttribute('data-paused', st.status === 'paused'); if (st.status !== 'completed') done.textContent = ''; },
@@ -52,7 +53,7 @@ export function GameScreen(params = [], ctx = {}) {
       done.textContent = `${t('game.done')} ${t('game.summary', { wpm: Math.round(sum.wpmNet), accuracy: `${Math.round(sum.accuracy)}%`, errors: sum.errors, time: fmtTime(sum.elapsedMs) })}`;
       ctx.lastResult = buildResult({ levelId, exerciseId, timestamp: Date.now(), summary: sum }); // Fase 4: schermata dei risultati
     } } });
-  const offSettings = onSettings((s) => { keyboard.update({ guide: s.guide, tint: s.fingerTint }); textView.update({ size: s.textSize }); });
+  const offSettings = onSettings((s) => { keyboard.update({ guide: s.guide, tint: s.fingerTint }); fingerLegend.update({ tint: s.fingerTint }); textView.update({ size: s.textSize }); });
   (async () => {
     try {
       if (!/^[\w-]+$/.test(levelId)) throw new Error('id');
