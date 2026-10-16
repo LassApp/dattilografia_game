@@ -1,4 +1,6 @@
 # Changelog
+## 0.3.1 — Correzione
+- Dita colorate: barra piena nel colore del dito con contorno del colore del testo del tasto (prima, tinta al 30%: poco visibile in scuro e invisibile in chiaro).
 ## 0.3.0 — Fase 3 (metriche, controlli, pausa)
 - Motore: `metrics` (tutte le metriche del §7), `hints` (5 errori consecutivi + attesa), `result` (oggetto serializzabile); la sessione registra le metriche.
 - Componenti: StatPill, Hud, Banner (Caps Lock, suggerimento), Modal (`<dialog>`), PauseOverlay, ConfirmDialog, SettingsPanel, Switch, SegmentedControl; Topbar con contesto per schermata.
