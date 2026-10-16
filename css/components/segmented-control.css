@@ -1,0 +1,5 @@
+.c-seg{display:inline-flex;border:1px solid var(--border);border-radius:var(--radius-md);overflow:hidden}
+.c-seg__opt{display:grid;place-items:center;min-width:44px;min-height:44px;padding:var(--space-2) var(--space-4);cursor:pointer;font-weight:700}
+.c-seg__opt:hover{background:var(--surface)}
+.c-seg__opt:has(:checked){background:var(--cta-bg);color:var(--cta-text)}
+.c-seg__opt:has(:focus-visible){outline:3px solid var(--focus-ring);outline-offset:-3px}

@@ -1,4 +1,9 @@
 # Changelog
+## 0.3.0 — Fase 3 (metriche, controlli, pausa)
+- Motore: `metrics` (tutte le metriche del §7), `hints` (5 errori consecutivi + attesa), `result` (oggetto serializzabile); la sessione registra le metriche.
+- Componenti: StatPill, Hud, Banner (Caps Lock, suggerimento), Modal (`<dialog>`), PauseOverlay, ConfirmDialog, SettingsPanel, Switch, SegmentedControl; Topbar con contesto per schermata.
+- Controller: Caps Lock, pausa automatica (finestra non attiva, scheda nascosta, inattività, qualunque modal), Esc, blocco incolla/trascinamento.
+- Impostazioni modificabili dal pannello (tema, suoni, guida, dita colorate, dimensione testo).
 ## 0.2.1 — Correzione
 - Livello di prova rinominato `_prova` → `prova`: GitHub Pages (Jekyll) non pubblica file e cartelle che iniziano con `_`. Aggiunto `.nojekyll`.
 ## 0.2.0 — Fase 2 (layout italiano, tastiera animata, motore di input)

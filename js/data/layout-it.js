@@ -16,6 +16,7 @@ export const ROWS = [
     K('KeyB', 'b', 'B', 'i', 'l'), K('KeyN', 'n', 'N', 'i', 'r'), K('KeyM', 'm', 'M', 'i', 'r'), K('Comma', ',', ';', 'm', 'r'), K('Period', '.', ':', 'r', 'r'), K('Slash', '-', '_', 'p', 'r'), S('ShiftRight', '⇧', 'p', 'r', 2.6)],
   [S('Space', '', 't', 'r', 8)],
 ];
+ROWS.forEach((r, i) => r.forEach((k) => { k.row = i; })); // 0 numeri · 1 superiore · 2 base · 3 inferiore · 4 spazio
 export const KEYS = ROWS.flat();
 export const KEY_BY_CODE = new Map(KEYS.map((k) => [k.code, k]));
 export const CHAR_MAP = new Map();
@@ -35,5 +36,5 @@ export function charToKeys(ch) {
   if (m.shift) mods.push(OPPOSITE[key.hand]);
   if (m.altgr) mods.push('AltRight');
   if (m.caps) mods.push('CapsLock');
-  return { code: m.code, finger: key.finger, hand: key.hand, shift: !!m.shift, altgr: !!m.altgr, caps: !!m.caps, mods };
+  return { code: m.code, finger: key.finger, hand: key.hand, row: key.row, shift: !!m.shift, altgr: !!m.altgr, caps: !!m.caps, mods };
 }
