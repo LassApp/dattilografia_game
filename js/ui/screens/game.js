@@ -1,4 +1,4 @@
-// Schermata di gioco (Fase 3): HUD, banner (Caps Lock, suggerimento), pausa/ricomincia, tastiera, testo. La logica sta in engine/ e controllers/.
+// Schermata di gioco (Fase 3): HUD nella topbar, testo sopra la tastiera, banner (Caps Lock, suggerimento), pausa/ricomincia, tastiera, testo. La logica sta in engine/ e controllers/.
 import { h } from '../dom.js';
 import { t } from '../../i18n/index.js';
 import { Icon } from '../components/icon.js';
@@ -31,7 +31,7 @@ export function GameScreen(params = [], ctx = {}) {
   const session = createSession(); const hints = createHints();
   const textView = TextView({ size: settings.textSize }); const keyboard = VirtualKeyboard({ guide: settings.guide, tint: settings.fingerTint });
   const fingerHint = FingerHint(); const fingerLegend = FingerLegend({ tint: settings.fingerTint }); const hud = Hud(hudValues(session.getState())); const banner = Banner({ variant: 'warning' });
-  const title = h('span', { class: 's-game__toptitle' }); const done = h('p', { class: 's-game__done', role: 'status' });
+  const done = h('p', { class: 's-game__done', role: 'status' });
   const flags = { caps: false, hint: null };
   const showBanner = () => (flags.caps ? banner.update({ visible: true, variant: 'warning', text: t('banner.caps') })
     : flags.hint ? banner.update({ visible: true, variant: 'hint', text: hintText(flags.hint) }) : banner.update({ visible: false })); // il Caps Lock ha la precedenza
@@ -43,8 +43,8 @@ export function GameScreen(params = [], ctx = {}) {
   const pauseBtn = Button({ label: t('game.pause'), icon: 'pause', variant: 'ghost', disabled: true, onClick: (e) => { e.currentTarget.blur(); session.pause('manual'); } });
   const restartBtn = Button({ label: t('game.restart'), icon: 'restart', variant: 'ghost', onClick: (e) => { e.currentTarget.blur(); askRestart(); } });
   const back = h('a', { href: '#/' }, Icon({ name: 'back', size: 'sm' }).el, t('nav.back'));
-  ctx.topbar?.update({ center: h('div', { class: 'l-cluster' }, back, title), extra: [pauseBtn.el, restartBtn.el] });
-  const el = h('div', { class: 's-game l-container' }, hud.el, h('div', { class: 's-game__banner' }, banner.el), fingerHint.el, h('div', { class: 's-game__board' }, fingerLegend.el, keyboard.el), textView.el, done);
+  ctx.topbar?.update({ center: h('div', { class: 'l-cluster' }, back, hud.el), extra: [pauseBtn.el, restartBtn.el] });
+  const el = h('div', { class: 's-game l-container' }, h('div', { class: 's-game__banner' }, banner.el), textView.el, done, fingerHint.el, h('div', { class: 's-game__board' }, fingerLegend.el, keyboard.el));
   const ctrl = createGameController({ session, hints, textView, keyboard, fingerHint, fingerLegend, hud, ui: {
     setCaps: (v) => { flags.caps = v; showBanner(); }, setHint: (x) => { flags.hint = x; showBanner(); },
     showPause: (reason) => pauseOverlay.open(reason === 'modal' ? 'manual' : reason), hidePause: () => pauseOverlay.close(),
@@ -59,8 +59,8 @@ export function GameScreen(params = [], ctx = {}) {
       if (!/^[\w-]+$/.test(levelId)) throw new Error('id');
       const level = await (await fetch(`content/levels/${levelId}.json`)).json();
       const i = Math.max(0, level.esercizi.findIndex((x) => x.id === exId)); const ex = level.esercizi[i]; exerciseId = ex.id;
-      title.textContent = `${level.titolo} · ${i + 1}/${level.esercizi.length}`; session.load(normalizeText(ex.testo));
-    } catch { title.textContent = t('game.loadError'); }
+      session.load(normalizeText(ex.testo));
+    } catch { done.textContent = t('game.loadError'); }
   })();
   return { el, destroy() { ctrl.destroy(); offSettings(); pauseOverlay.destroy(); confirm.destroy(); ctx.topbar?.update({ center: '', extra: [] }); } };
 }

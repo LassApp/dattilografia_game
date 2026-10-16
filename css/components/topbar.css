@@ -1,5 +1,11 @@
+.c-topbar{flex-wrap:wrap;row-gap:var(--space-2)}
+.c-topbar__center .l-cluster{justify-content:center;flex-wrap:nowrap}
 .c-topbar__extra{display:flex;gap:var(--space-2)}
 .c-topbar a{display:inline-flex;gap:var(--space-2);align-items:center;color:inherit;text-decoration:none}.c-topbar a:hover{text-decoration:underline}
 .c-topbar .c-btn{background:transparent;color:inherit;border-color:currentColor}
 .c-topbar .c-btn:is(:hover,[data-force~=hover]):not(:disabled){border-color:currentColor}
 .c-topbar .c-btn:disabled{background:transparent;color:inherit;border:1px dashed currentColor}
+/* HUD dentro la topbar: pillole compatte nei colori della topbar (il contrasto è quello, già verificato, del testo della topbar) */
+.c-topbar .c-hud{flex-wrap:nowrap;gap:var(--space-2)}
+.c-topbar .c-statpill{padding:2px var(--space-3);border-color:currentColor;background:transparent;color:inherit;font-size:var(--text-sm)}
+.c-topbar .c-statpill[data-state=idle] b{color:inherit}

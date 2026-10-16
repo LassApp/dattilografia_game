@@ -1,4 +1,6 @@
 # Changelog
+## 0.3.3 — Layout della schermata di gioco
+- Il testo da copiare sta sopra la tastiera (niente scroll prima di iniziare); le statistiche live passano nella topbar; rimosso il titolo dell'esercizio dalla topbar.
 ## 0.3.2 — Dita colorate e CSS
 - Dita colorate: tutto il tasto nel colore del dito (testo con contrasto AA, token `--key-finger-*`) e nuova legenda a sinistra della tastiera (FingerLegend) con il dito corrente evidenziato. Rimossi i token `--ft-*`.
 - Un solo `css/index.css` (elenco di componenti e schermate, con layer per riga) al posto di `components/index.css` e `screens/index.css`; `check-architecture` verifica che ogni CSS sia elencato.
