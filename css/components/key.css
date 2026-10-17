@@ -1,4 +1,5 @@
 .c-key{position:relative;flex:var(--_w,1) 1 0;min-width:0;height:46px;display:grid;place-items:center;border-radius:8px;background:var(--key-bg);color:var(--key-text);box-shadow:var(--shadow-key);font:700 var(--text-sm)/1 var(--font-mono);user-select:none;transition:transform var(--dur-press) var(--ease-out)}
+.c-key[data-size=sm]{flex:none;width:2rem;height:2rem}
 .c-key[data-down]{transform:translateY(2px) scale(.96)}
 .c-key[data-mark]::after{content:"";position:absolute;bottom:6px;width:16px;height:3px;border-radius:2px;background:currentColor}
 .c-key__ring{position:absolute;inset:-3px;border-radius:11px;border:3px solid var(--key-glow-ok);opacity:0;pointer-events:none}
@@ -7,3 +8,8 @@
 .c-key[data-down=error]{outline:3px solid var(--key-glow-error);outline-offset:2px}
 .c-key[data-hint=next]{outline:3px solid var(--key-next);outline-offset:2px}
 .c-key[data-hint=shift]{outline:3px dashed var(--key-next);outline-offset:2px}
+.c-key__count{position:absolute;top:2px;right:4px;font-size:.65rem;font-weight:700;line-height:1}
+.c-key[data-heat]{background:var(--_heat);color:var(--_heat-ink)}
+.c-key[data-heat="1"]{--_heat:var(--heat-key-1);--_heat-ink:var(--heat-key-ink)}
+.c-key[data-heat="2"]{--_heat:var(--heat-key-2);--_heat-ink:var(--heat-key-ink)}
+.c-key[data-heat="3"]{--_heat:var(--heat-key-3);--_heat-ink:var(--heat-key-ink-3)}

@@ -1,0 +1,6 @@
+.c-statcard{display:flex;flex-direction:column;gap:var(--space-1);padding:var(--space-3) var(--space-4);border:1px solid var(--border);border-radius:var(--radius-md);background:var(--surface)}
+.c-statcard__label{font-size:var(--text-sm);color:var(--text-muted)}
+.c-statcard b{font-size:var(--text-xl);line-height:1.1;font-variant-numeric:tabular-nums}
+.c-statcard[data-variant=compact] b{font-size:var(--text-lg)}
+.c-statcard[data-variant=record]{border:2px solid var(--gold-text)}
+.c-statcard__delta{min-height:1.2em;font-size:var(--text-sm);color:var(--text-muted)}

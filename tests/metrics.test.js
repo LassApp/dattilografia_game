@@ -18,3 +18,7 @@ test('result è serializzabile', () => {
   const r = buildResult({ levelId: 'prova', exerciseId: 'prova-01', timestamp: 1, summary: createMetrics().summary(0) });
   assert.deepEqual(JSON.parse(JSON.stringify(r)), r); assert.equal(r.schemaVersion, 1); assert.equal(r.userId, null);
 });
+test('ultima finestra parziale nel riepilogo', () => {
+  const m = createMetrics(); for (let i = 0; i <= 4; i++) m.record({ expected: 'a', ok: true, t: i * 1000 });
+  const s = m.summary(4000).samples; assert.equal(s.length, 2); assert.equal(s[1].t, 4000); assert.equal(Math.round(s[1].wpm), 12);
+});

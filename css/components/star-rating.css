@@ -1,0 +1,4 @@
+.c-stars{display:inline-flex;gap:var(--space-1);color:var(--gold-text)}
+.c-stars__star{display:inline-grid}
+.c-stars[data-size=lg] .c-icon{width:2.5rem;height:2.5rem}
+.c-stars__star[data-filled] .c-icon{fill:var(--gold)}

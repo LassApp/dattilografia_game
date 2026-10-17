@@ -3,7 +3,8 @@ import { Key } from './key.js';
 import { ROWS } from '../../data/layout-it.js';
 import { ringPulse } from '../animations.js';
 const MARK = new Set(['KeyF', 'KeyJ']);
-/** @param {{guide?:boolean,tint?:boolean,next?:{code:string,mods:string[]}|null}} props  API: update, press(code,'ok'|'error'|'neutral'), release, releaseAll */
+/** @param {{guide?:boolean,tint?:boolean,next?:{code:string,mods:string[]}|null,heat?:Object<string,{level:number,count:number}>}} props
+ *  Con `heat` diventa heatmap (sola lettura: niente guida né dita colorate). API: update, press(code,'ok'|'error'|'neutral'), release, releaseAll */
 export function VirtualKeyboard(props = {}) {
   const el = h('div', { class: 'c-kb', 'aria-hidden': 'true' }); const keys = new Map(); let hinted = [];
   for (const row of ROWS) {
@@ -13,12 +14,16 @@ export function VirtualKeyboard(props = {}) {
   }
   const hints = () => {
     hinted.forEach((c) => keys.get(c)?.update({ hint: null })); hinted = [];
-    if (!props.guide || !props.next) return;
+    if (!props.guide || !props.next || props.heat) return;
     const put = (c, hint) => { if (keys.has(c)) { keys.get(c).update({ hint }); hinted.push(c); } };
     put(props.next.code, 'next'); props.next.mods.forEach((c) => put(c, 'shift'));
   };
-  const update = (p = {}) => { props = { ...props, ...p }; el.toggleAttribute('data-tint', !!props.tint); hints(); };
-  update();
+  const heat = () => keys.forEach((k, code) => { const e = props.heat?.[code]; k.update({ heat: e?.level ?? null, count: e?.count ?? null }); });
+  const update = (p = {}) => {
+    props = { ...props, ...p }; el.toggleAttribute('data-tint', !!props.tint && !props.heat); el.toggleAttribute('data-heatmap', !!props.heat);
+    hints(); if ('heat' in p) heat();
+  };
+  update(props.heat ? { heat: props.heat } : {}); if (props.heat) heat();
   return {
     el, update,
     press(code, result) { const k = keys.get(code); if (!k) return; k.update({ down: result }); if (result !== 'neutral') ringPulse(k.ring); },
@@ -28,4 +33,5 @@ export function VirtualKeyboard(props = {}) {
   };
 }
 export const meta = { name: 'VirtualKeyboard', create: VirtualKeyboard, states: ['def'], variants: [
-  { label: 'base', props: {} }, { label: 'guida + dita', props: { guide: true, tint: true, next: { code: 'KeyD', mods: ['ShiftRight'] } } } ] };
+  { label: 'base', props: {} }, { label: 'guida + dita', props: { guide: true, tint: true, next: { code: 'KeyD', mods: ['ShiftRight'] } } },
+  { label: 'heatmap', props: { heat: { KeyD: { level: 3, count: 4 }, KeyA: { level: 2, count: 2 }, KeyF: { level: 1, count: 1 } } } } ] };

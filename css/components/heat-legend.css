@@ -1,0 +1,5 @@
+.c-heatlegend{display:flex;flex-wrap:wrap;gap:var(--space-3);align-items:center;font-size:var(--text-sm)}
+.c-heatlegend__item{display:inline-flex;gap:var(--space-2);align-items:center}
+.c-heatlegend__sw{width:1.25rem;height:1.25rem;border:1px solid var(--border);border-radius:4px;background:var(--_heat)}
+.c-heatlegend [data-heat="1"]{--_heat:var(--heat-key-1)}.c-heatlegend [data-heat="2"]{--_heat:var(--heat-key-2)}.c-heatlegend [data-heat="3"]{--_heat:var(--heat-key-3)}
+.c-heatlegend small{color:var(--text-muted)}

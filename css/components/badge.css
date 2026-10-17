@@ -1,0 +1,2 @@
+.c-badge{display:inline-flex;align-items:center;gap:var(--space-1);padding:2px var(--space-3);border:1px solid currentColor;border-radius:99px;font-size:var(--text-sm);font-weight:700}
+.c-badge[data-variant=record]{color:var(--gold-text)}.c-badge[data-variant=done]{color:var(--success-text)}.c-badge[data-variant=new]{color:var(--info-text)}

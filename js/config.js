@@ -1,6 +1,6 @@
 // Configurazione globale. Nessun colore qui (§4).
 export const PROJECT_NAME = 'NOME_DA_DEFINIRE';
-export const VERSION = '0.3.3';
+export const VERSION = '0.4.0';
 export const STORAGE_NS = 'dt'; // prefisso neutro: il nome del prodotto cambierà, i dati locali no
 export const SCHEMA_VERSION = 1;
 // Valori operativi (Fase 3) — DA CONCORDARE: si cambiano solo qui.
@@ -11,3 +11,5 @@ export const RESTART_CONFIRM_CHARS = 10; // oltre questa soglia "Ricomincia" chi
 export const SAMPLE_MS = 3000;           // campionamento della velocità per il grafico
 export const WPM_MIN_MS = 2000;          // prima di questo tempo l'HUD mostra "—" al posto dei WPM
 export const HUD_REFRESH_MS = 250;       // aggiornamento dell'HUD (~4 Hz)
+// Soglie di esempio (tipo "una mano, una riga"): quelle definitive stanno nel campo `soglie` di ogni livello (§11). 1★ = esercizio superato.
+export const DEFAULT_SOGLIE = { precisioneMin: 60, wpmMin: 6, stelle: { 2: { precisione: 80, wpm: 9 }, 3: { precisione: 98, wpm: 12 } } };

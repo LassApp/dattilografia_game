@@ -19,8 +19,15 @@ import * as modal from '../ui/components/modal.js';
 import * as pauseOverlay from '../ui/components/pause-overlay.js';
 import * as confirmDialog from '../ui/components/confirm-dialog.js';
 import * as settingsPanel from '../ui/components/settings-panel.js';
+import * as starRating from '../ui/components/star-rating.js';
+import * as badge from '../ui/components/badge.js';
+import * as statCard from '../ui/components/stat-card.js';
+import * as speedChart from '../ui/components/speed-chart.js';
+import * as heatLegend from '../ui/components/heat-legend.js';
+import * as keyReview from '../ui/components/key-review-list.js';
+import * as resultSummary from '../ui/components/result-summary.js';
 // Aggiungere qui ogni nuovo componente (check-architecture verifica che esporti `meta`).
-const MODULES = [icon, button, iconButton, themeToggle, topbar, key, keyboard, textView, fingerHint, fingerLegend, statPill, hud, banner, switchC, segmented, modal, pauseOverlay, confirmDialog, settingsPanel];
+const MODULES = [icon, button, iconButton, themeToggle, topbar, key, keyboard, textView, fingerHint, fingerLegend, statPill, hud, banner, switchC, segmented, modal, pauseOverlay, confirmDialog, settingsPanel, starRating, badge, statCard, speedChart, heatLegend, keyReview, resultSummary];
 const FORCE = { hov: 'hover', foc: 'focus', act: 'active' };
 applyTheme();
 const out = document.querySelector('#out');

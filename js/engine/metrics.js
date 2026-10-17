@@ -26,9 +26,11 @@ export function createMetrics() {
         const info = charToKeys(k.char); if (!info) continue;
         for (const [grp, id] of [[byFinger, info.finger], [byHand, info.hand]]) { const g = (grp[id] ||= { attempts: 0, errors: 0 }); g.attempts += k.attempts; g.errors += k.errors; }
       }
+      const winStart = m.nextSample - SAMPLE_MS, dur = t - winStart; const samples = m.samples.map((x) => ({ ...x }));
+      if (dur >= 500 && m.sampleCorrect > 0) samples.push({ t, wpm: wpm(m.sampleCorrect, dur) }); // ultima finestra, parziale
       const mean = m.nInt ? m.sumInt / m.nInt : 0;
       return { ...live(t), maxStreak: m.maxStreak, avgInterval: mean, rhythmStdev: m.nInt ? Math.sqrt(Math.max(0, m.sumSq / m.nInt - mean * mean)) : 0,
-        samples: m.samples.map((x) => ({ ...x })), keys, problemKeys, byFinger, byHand };
+        samples, keys, problemKeys, byFinger, byHand };
     },
   };
 }

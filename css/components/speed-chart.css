@@ -1,0 +1,8 @@
+.c-speedchart{margin:0}
+.c-speedchart svg{width:100%;height:auto}
+.c-speedchart__axis{fill:none;stroke:var(--border)}
+.c-speedchart__target{fill:none;stroke:var(--text-muted);stroke-dasharray:6 4}
+.c-speedchart__line{fill:none;stroke:var(--accent);stroke-width:3;stroke-linejoin:round;stroke-linecap:round}
+.c-speedchart__dot{fill:var(--accent)}
+.c-speedchart text{fill:var(--text);font:11px var(--font-ui)}
+.c-speedchart figcaption,.c-speedchart__empty{margin-top:var(--space-2);font-size:var(--text-sm);color:var(--text-muted)}

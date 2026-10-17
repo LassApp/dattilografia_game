@@ -1,4 +1,8 @@
 # Changelog
+## 0.4.0 — Fase 4 (fine partita)
+- Schermata `#/risultati`: esito e stelle con "pop", statistiche con conteggio progressivo, grafico della velocità (SVG), tasti da ripassare, heatmap della tastiera con numero di errori, miglior risultato e badge record.
+- Motore: `scoring` (soglie → stelle), `heat`; metriche con ultima finestra parziale. Storage: adapter locale (`getProgress`, `getBest`, `saveResult`) dietro `storage/index.js`.
+- Componenti: StarRating, Badge, StatCard, SpeedChart, HeatLegend, KeyReviewList, ResultSummary; Key con `size`, `heat`, `count`. Token `--heat-key-*`.
 ## 0.3.3 — Layout della schermata di gioco
 - Il testo da copiare sta sopra la tastiera (niente scroll prima di iniziare); le statistiche live passano nella topbar; rimosso il titolo dell'esercizio dalla topbar.
 ## 0.3.2 — Dita colorate e CSS

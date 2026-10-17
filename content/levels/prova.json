@@ -1,7 +1,7 @@
 {
   "id": "prova",
   "titolo": "[ESERCIZIO DI PROVA]",
-  "nota": "Segnaposto per collaudare tastiera e motore: non sono esercizi didattici.",
+  "nota": "Segnaposto per collaudare tastiera, motore e risultati: non sono esercizi didattici. Le soglie sono valori di esempio.",
   "esercizi": [
     {
       "id": "prova-01",
@@ -15,5 +15,19 @@
       "id": "prova-03",
       "testo": "è à ù ò ì"
     }
-  ]
+  ],
+  "soglie": {
+    "precisioneMin": 60,
+    "wpmMin": 6,
+    "stelle": {
+      "2": {
+        "precisione": 80,
+        "wpm": 9
+      },
+      "3": {
+        "precisione": 98,
+        "wpm": 12
+      }
+    }
+  }
 }

@@ -15,4 +15,12 @@
 @import url("components/segmented-control.css") layer(components);
 @import url("components/modal.css") layer(components);
 @import url("components/settings-panel.css") layer(components);
+@import url("components/star-rating.css") layer(components);
+@import url("components/badge.css") layer(components);
+@import url("components/stat-card.css") layer(components);
+@import url("components/speed-chart.css") layer(components);
+@import url("components/heat-legend.css") layer(components);
+@import url("components/key-review-list.css") layer(components);
+@import url("components/result-summary.css") layer(components);
 @import url("screens/game.css") layer(screens);
+@import url("screens/results.css") layer(screens);
